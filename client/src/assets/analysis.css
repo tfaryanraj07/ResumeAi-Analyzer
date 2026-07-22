@@ -1,0 +1,390 @@
+:root {
+  --bg: #0b1220;
+  --surface: #141c2f;
+  --surface-hover: #1b2640;
+
+  --border: #27344d;
+
+  --primary: #7c5cff;
+  --primary-light: #9277ff;
+
+  --text: #f8fafc;
+  --muted: #94a3b8;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --radius: 20px;
+
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+
+  --transition: all 0.25s ease;
+}
+
+/* ================= PAGE ================= */
+
+.analysis-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 40px;
+}
+
+.analysis-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  padding-bottom: 60px;
+}
+
+/* ================= HEADER ================= */
+
+.analysis-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 20px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  padding: 28px;
+
+  box-shadow: var(--shadow);
+}
+
+.analysis-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.analysis-header-left h1 {
+  color: var(--text);
+  font-size: 30px;
+  margin: 0;
+}
+
+.resume-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resume-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: white;
+  font-weight: 600;
+}
+
+.resume-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--success);
+  font-size: 14px;
+}
+
+/* ================= STATS ================= */
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stats-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  padding: 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  transition: var(--transition);
+
+  box-shadow: var(--shadow);
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.stats-icon {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.stats-card h2 {
+  margin: 4px 0 0;
+  color: white;
+  font-size: 28px;
+}
+
+.stats-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ================= GRID ================= */
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ================= CARD ================= */
+
+.analysis-card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  padding: 24px;
+
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  height: 100%;
+}
+
+.analysis-card:hover {
+  transform: translateY(-6px);
+
+  background: var(--surface-hover);
+
+  border-color: var(--primary);
+}
+
+.analysis-card h3 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 20px;
+}
+
+.analysis-card p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.analysis-section-title {
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+/* ================= LIST ================= */
+
+.analysis-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  padding-left: 18px;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+/* ================= ATS ================= */
+
+.ats-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  padding: 24px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #263042;
+  stroke-width: 14;
+}
+
+.progress {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.progress-content {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-content h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 42px;
+}
+
+.progress-content p {
+  margin-top: 8px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+}
+
+.score-badge {
+  margin-top: 18px;
+
+  background: rgba(34, 197, 94, 0.15);
+
+  color: var(--success);
+
+  padding: 8px 18px;
+
+  border-radius: 30px;
+
+  font-weight: 600;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 10px;
+}
+
+.skill-chip {
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: #24314f;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+.skill-chip:hover {
+  background: var(--primary);
+  transform: scale(1.05);
+}
+
+.skill-chip.missing {
+  background: #3f1d1d;
+  color: #ffb4b4;
+}
+
+/* ================= BUTTON ================= */
+
+.analysis-button {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.analysis-button:hover {
+  background: var(--primary-light);
+
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .analysis-page {
+    padding: 20px;
+  }
+
+  .analysis-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-header-left h1 {
+    font-size: 24px;
+  }
+
+  .progress-content h1 {
+    font-size: 36px;
+  }
+}

@@ -1,0 +1,327 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1a1a1a;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #1a1a1a;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+.btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* =========================
+   AUTH
+========================= */
+
+.auth-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:100px 20px 40px;
+    background:#0B1220;
+    overflow-y:auto;
+}
+
+.auth-card{
+    width:100%;
+    max-width:460px;
+
+    background:#171C2B;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:34px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    animation:fadeUp .35s ease;
+}
+
+.auth-card h2{
+    color:#fff;
+    font-size:2rem;
+    margin:0 0 8px;
+}
+
+.auth-subtitle{
+    color:#94A3B8;
+    margin-bottom:26px;
+    line-height:1.6;
+}
+
+.auth-card .input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    color:#E5E7EB;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.input-field{
+    width:100%;
+    padding:14px 16px;
+
+    background:#111827;
+
+    border:1px solid #2D3748;
+
+    color:#fff;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    transition:.25s;
+}
+
+.input-field::placeholder{
+    color:#64748B;
+}
+
+.input-field:focus{
+    outline:none;
+    border-color:#7C5CFF;
+    box-shadow:0 0 0 4px rgba(124,92,255,.15);
+}
+
+.auth-card .btn{
+    width:100%;
+    margin-top:12px;
+    padding:14px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:600;
+
+    background:linear-gradient(135deg,#7C5CFF,#6A4BFF);
+
+    color:white;
+}
+
+.auth-card .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(124,92,255,.35);
+}
+
+.auth-switch{
+    margin-top:22px;
+    text-align:center;
+    color:#94A3B8;
+}
+
+.auth-switch a{
+    color:#8B84FF;
+    font-weight:600;
+}
+
+.error-text{
+    background:#EF44441A;
+    border:1px solid #EF444455;
+    color:#FCA5A5;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+.success-text{
+    background:#22C55E1A;
+    border:1px solid #22C55E55;
+    color:#86EFAC;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@media(max-width:768px){
+
+.auth-page{
+padding:90px 16px 30px;
+}
+
+.auth-card{
+padding:26px;
+}
+
+.auth-card h2{
+font-size:1.7rem;
+}
+
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader-fullscreen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-inline {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* =========================
+   404
+========================= */
+
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-page h1 {
+  font-size: 64px;
+  margin-bottom: 0;
+}

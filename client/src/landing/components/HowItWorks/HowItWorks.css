@@ -1,0 +1,134 @@
+/* ===========================
+   HOW IT WORKS
+=========================== */
+
+.how{
+    background:#090C15;
+}
+
+.steps{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:70px;
+
+    position:relative;
+}
+
+.step-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.step-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#6C63FF;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+.step-number{
+
+    position:absolute;
+
+    top:18px;
+
+    right:22px;
+
+    font-size:50px;
+
+    font-weight:800;
+
+    color:rgba(255,255,255,.05);
+}
+
+.step-icon{
+
+    width:85px;
+
+    height:85px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #6C63FF,
+        #4F46E5
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    margin-bottom:30px;
+}
+
+.step-card h3{
+
+    color:white;
+
+    font-size:26px;
+
+    margin-bottom:15px;
+}
+
+.step-card p{
+
+    color:#94A3B8;
+
+    line-height:1.8;
+}
+
+.step-arrow{
+
+    position:absolute;
+
+    right:-20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#6C63FF;
+}
+
+@media(max-width:992px){
+
+.steps{
+
+grid-template-columns:1fr;
+
+}
+
+.step-arrow{
+
+display:none;
+}
+
+}

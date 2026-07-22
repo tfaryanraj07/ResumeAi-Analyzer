@@ -1,0 +1,33 @@
+:root{
+
+--bg:#07111F;
+
+--bg2:#0B1628;
+
+--card:#111C30;
+
+--card2:#17233B;
+
+--primary:#6D5DF6;
+
+--secondary:#3B82F6;
+
+--success:#22C55E;
+
+--danger:#EF4444;
+
+--text:#FFFFFF;
+
+--text-light:#CBD5E1;
+
+--text-muted:#94A3B8;
+
+--border:#25314D;
+
+--shadow:0 20px 50px rgba(0,0,0,.35);
+
+--radius:18px;
+
+--transition:.35s ease;
+
+}
