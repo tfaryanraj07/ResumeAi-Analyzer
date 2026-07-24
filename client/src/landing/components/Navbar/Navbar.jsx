@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 import useAuth from "../../../hooks/useAuth";
-import AuthModal from "../Auth/AuthModal";
+
 
 import "./Navbar.css";
 
@@ -51,64 +51,14 @@ const moreTools = [
   },
 ];
 
-// const Dropdown = ({ title, items }) => {
-//   const [open, setOpen] = useState(false);
-//   const ref = useRef(null);
 
-//   useEffect(() => {
-//     const close = (e) => {
-//       if (!ref.current?.contains(e.target)) {
-//         setOpen(false);
-//       }
-//     };
 
-//     document.addEventListener("click", close);
-
-//     return () => document.removeEventListener("click", close);
-//   }, []);
-
-//   return (
-//     <div
-//       className="nav-dropdown"
-//       ref={ref}
-//       onMouseEnter={() => setOpen(true)}
-//       onMouseLeave={() => setOpen(false)}
-//     >
-//       <button className="nav-link dropdown-btn">
-//         {title}
-//         <ChevronDown
-//           size={16}
-//           className={open ? "rotate" : ""}
-//         />
-//       </button>
-
-//       {open && (
-//         <div className="dropdown-menu">
-//           {items.map((item) => (
-//             <Link
-//               key={item.title}
-//               to={item.path}
-//               className="dropdown-item"
-//             >
-//               {item.title}
-//             </Link>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-const Navbar = () => {
+const Navbar = ({ openLogin, openRegister }) => {
   const navigate = useNavigate();
 
   const { user, logout } = useAuth();
 
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const [showModal, setShowModal] = useState(false);
-
-  const [authMode, setAuthMode] = useState("login");
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -127,15 +77,6 @@ const Navbar = () => {
     );
   }, []);
 
-  const openLogin = () => {
-    setAuthMode("login");
-    setShowModal(true);
-  };
-
-  const openRegister = () => {
-    setAuthMode("register");
-    setShowModal(true);
-  };
 
   const handleLogout = () => {
     logout();
@@ -331,15 +272,6 @@ const Navbar = () => {
           </div>
         )}
       </header>
-
-      {showModal && (
-        <AuthModal
-          mode={authMode}
-          onClose={() =>
-            setShowModal(false)
-          }
-        />
-      )}
     </>
   );
 };

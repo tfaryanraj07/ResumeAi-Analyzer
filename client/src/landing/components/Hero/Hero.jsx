@@ -1,6 +1,6 @@
 import "./Hero.css";
 
-const Hero = () => {
+const Hero = ({ openLogin, openRegister }) => {
   return (
     <section className="hero">
 
@@ -30,22 +30,21 @@ const Hero = () => {
 
           </p>
 
-          <div className="hero-buttons">
+<div className="hero-buttons">
+  <button
+    className="primary-btn"
+    onClick={openRegister}
+  >
+    Analyze My Resume
+  </button>
 
-            <button className="primary-btn">
-
-              Analyze Resume
-
-            </button>
-
-            <button className="secondary-btn">
-
-              Watch Demo
-
-            </button>
-
-          </div>
-
+  <button
+    className="secondary-btn"
+    onClick={openLogin}
+  >
+    Sign In
+  </button>
+</div>
           <div className="hero-stats">
 
             <div>
