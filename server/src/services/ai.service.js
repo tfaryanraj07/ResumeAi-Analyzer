@@ -1,11 +1,15 @@
 const { GoogleGenAI } = require("@google/genai");
 const env = require("../config/env");
 
-// Models to try in order of preference if one is rate-limited or unavailable
+// Models to try in order of preference.
+// gemini-3.8-flash is the primary model required by Google Gemini API in 2026.
 const CANDIDATE_MODELS = [
+  "gemini-3.8-flash",
+  "gemini-3.8",
+  "gemini-3.5-flash",
   "gemini-2.5-flash",
-  "gemini-1.5-flash",
   "gemini-2.0-flash",
+  "gemini-1.5-flash",
 ];
 
 const getAiClient = () => {
