@@ -1,17 +1,6 @@
 const { GoogleGenAI } = require("@google/genai");
 const env = require("../config/env");
 
-// Models to try in order of preference.
-// gemini-3.8-flash is the primary model required by Google Gemini API in 2026.
-const CANDIDATE_MODELS = [
-  "gemini-3.8-flash",
-  "gemini-3.8",
-  "gemini-3.5-flash",
-  "gemini-2.5-flash",
-  "gemini-2.0-flash",
-  "gemini-1.5-flash",
-];
-
 const getAiClient = () => {
   const apiKey = env.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
   if (!apiKey) {
@@ -55,6 +44,20 @@ const parseCleanJson = (rawText) => {
   }
 };
 
+const validateAnalysisResult = (parsed) => {
+  if (typeof parsed.atsScore !== "number") {
+    parsed.atsScore = Number(parsed.atsScore) || 70;
+  }
+  if (!Array.isArray(parsed.skills)) parsed.skills = [];
+  if (!Array.isArray(parsed.missingSkills)) parsed.missingSkills = [];
+  if (!Array.isArray(parsed.strengths)) parsed.strengths = [];
+  if (!Array.isArray(parsed.weaknesses)) parsed.weaknesses = [];
+  if (!Array.isArray(parsed.suggestions)) parsed.suggestions = [];
+  if (!Array.isArray(parsed.interviewQuestions)) parsed.interviewQuestions = [];
+  if (typeof parsed.summary !== "string") parsed.summary = "";
+  return parsed;
+};
+
 const analyzeResume = async (resumeText) => {
   if (!resumeText || resumeText.trim().length < 30) {
     throw new Error(
@@ -95,11 +98,72 @@ Resume Content:
 ${resumeText}
 `;
 
-  let lastError = null;
+  const errors = [];
 
-  for (const modelName of CANDIDATE_MODELS) {
+  // ==========================================
+  // Strategy 1: Modern Interactions API (Required for Gemini 3.8 Flash)
+  // ==========================================
+  if (ai.interactions && typeof ai.interactions.create === "function") {
+    for (const model of ["gemini-3.8-flash", "models/gemini-3.8-flash"]) {
+      try {
+        console.log(`[AI Service] Attempting Interactions API with model: ${model}`);
+        const interaction = await ai.interactions.create({
+          model,
+          input: prompt,
+        });
+
+        const outputText =
+          interaction.output_text ||
+          (typeof interaction.output === "string" ? interaction.output : "") ||
+          (interaction.outputs && interaction.outputs[0]?.text) ||
+          "";
+
+        if (outputText) {
+          console.log(`[AI Service] Successfully analyzed with Interactions API (${model})`);
+          return validateAnalysisResult(parseCleanJson(outputText));
+        }
+      } catch (err) {
+        console.warn(`[AI Service] Interactions API (${model}) failed:`, err.message);
+        errors.push(`Interactions API (${model}): ${err.message}`);
+      }
+    }
+  }
+
+  // ==========================================
+  // Strategy 2: Dynamic Models List Discovery
+  // ==========================================
+  let dynamicModels = [];
+  try {
+    const pager = await ai.models.list();
+    if (pager && pager.page && Array.isArray(pager.page)) {
+      dynamicModels = pager.page
+        .map((m) => m.name || m.id || "")
+        .filter(Boolean);
+      console.log("[AI Service] Dynamically discovered models:", dynamicModels);
+    }
+  } catch (err) {
+    console.warn("[AI Service] Models.list failed:", err.message);
+  }
+
+  // Combine discovered models with candidates
+  const candidateModels = Array.from(
+    new Set([
+      "gemini-3.8-flash",
+      "models/gemini-3.8-flash",
+      ...dynamicModels,
+      "gemini-2.5-flash",
+      "models/gemini-2.5-flash",
+      "gemini-2.0-flash",
+      "gemini-1.5-flash",
+    ])
+  );
+
+  // ==========================================
+  // Strategy 3: generateContent with candidate models
+  // ==========================================
+  for (const modelName of candidateModels) {
     try {
-      console.log(`[AI Service] Attempting resume analysis with model: ${modelName}`);
+      console.log(`[AI Service] Attempting generateContent with model: ${modelName}`);
 
       const response = await ai.models.generateContent({
         model: modelName,
@@ -111,34 +175,20 @@ ${resumeText}
       });
 
       const rawText = response.text ? response.text.trim() : "";
-      const parsed = parseCleanJson(rawText);
-
-      // Validate core required fields
-      if (typeof parsed.atsScore !== "number") {
-        parsed.atsScore = Number(parsed.atsScore) || 70;
+      if (rawText) {
+        console.log(`[AI Service] Successfully analyzed resume with model: ${modelName}`);
+        return validateAnalysisResult(parseCleanJson(rawText));
       }
-      if (!Array.isArray(parsed.skills)) parsed.skills = [];
-      if (!Array.isArray(parsed.missingSkills)) parsed.missingSkills = [];
-      if (!Array.isArray(parsed.strengths)) parsed.strengths = [];
-      if (!Array.isArray(parsed.weaknesses)) parsed.weaknesses = [];
-      if (!Array.isArray(parsed.suggestions)) parsed.suggestions = [];
-      if (!Array.isArray(parsed.interviewQuestions)) parsed.interviewQuestions = [];
-      if (typeof parsed.summary !== "string") parsed.summary = "";
-
-      console.log(`[AI Service] Successfully analyzed resume with model: ${modelName}`);
-      return parsed;
     } catch (err) {
       console.warn(`[AI Service] Model ${modelName} failed:`, err.message);
-      lastError = err;
-      // Continue to next model in CANDIDATE_MODELS
+      errors.push(`${modelName}: ${err.message}`);
     }
   }
 
-  // If all models failed, throw the detailed error
-  console.error("[AI Service] All candidate models failed. Last error:", lastError);
-  throw new Error(
-    `Gemini AI analysis failed: ${lastError?.message || "All Gemini models unavailable. Please check your GEMINI_API_KEY and quota."}`
-  );
+  console.error("[AI Service] All strategies failed:", errors);
+  // Pick the most helpful error message to return to the user
+  const primaryError = errors.find((e) => !e.includes("not found")) || errors[0] || "Unknown error";
+  throw new Error(`Gemini AI analysis failed: ${primaryError}`);
 };
 
 module.exports = {
