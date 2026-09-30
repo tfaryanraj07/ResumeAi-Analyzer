@@ -12,8 +12,8 @@
   display: flex;
   flex-direction: column;
 
-  background: #0b1020;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card, #121a29);
+  border-right: 1px solid var(--border, #1f293d);
 
   backdrop-filter: blur(20px);
 
@@ -32,7 +32,7 @@
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
 
   backdrop-filter: blur(3px);
 
@@ -48,14 +48,14 @@
   align-items: center;
   gap: 14px;
 
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .logo-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
   display: flex;
   align-items: center;
@@ -63,29 +63,24 @@
 
   color: white;
 
-  background: linear-gradient(
-    135deg,
-    #7c6cf6,
-    #5f46ff
-  );
+  background: linear-gradient(135deg, var(--primary, #2563eb), #1d4ed8);
 
-  box-shadow:
-    0 10px 35px rgba(124, 108, 246, .35);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
 }
 
 .logo-text {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 700;
 
   color: white;
 
-  letter-spacing: .3px;
+  letter-spacing: -0.3px;
 }
 
 .logo-text .gradient {
   margin-left: 3px;
 
-  color: #7c6cf6;
+  color: var(--secondary, #3b82f6);
 }
 
 /* ===========================
@@ -96,7 +91,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 8px;
+  gap: 6px;
 }
 
 .sidebar-link {
@@ -104,25 +99,25 @@
 
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 
-  padding: 14px 16px;
+  padding: 12px 14px;
 
-  border-radius: 14px;
+  border-radius: 10px;
 
   text-decoration: none;
 
-  color: #9ca7c3;
+  color: var(--text-muted, #94a3b8);
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
 
-  transition: .25s ease;
+  transition: all 0.2s ease;
 }
 
 .sidebar-link svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 
   flex-shrink: 0;
 }
@@ -130,21 +125,18 @@
 .sidebar-link:hover {
   color: white;
 
-  background: rgba(124,108,246,.12);
+  background: rgba(37, 99, 235, 0.1);
 
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .sidebar-link.active {
   color: white;
 
-  background: linear-gradient(
-    90deg,
-    rgba(124,108,246,.22),
-    rgba(124,108,246,.08)
-  );
+  background: rgba(37, 99, 235, 0.15);
 
-  border: 1px solid rgba(124,108,246,.25);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  font-weight: 600;
 }
 
 .sidebar-link.active::before {
@@ -155,14 +147,13 @@
   left: -18px;
 
   width: 4px;
-  height: 28px;
+  height: 24px;
 
   border-radius: 30px;
 
-  background: #7c6cf6;
+  background: var(--primary, #2563eb);
 
-  box-shadow:
-    0 0 18px rgba(124,108,246,.8);
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
 }
 
 /* ===========================
@@ -170,37 +161,31 @@
 =========================== */
 
 .storage-card {
-  margin-top: 28px;
+  margin-top: 24px;
 
-  padding: 18px;
+  padding: 16px;
 
-  border-radius: 18px;
+  border-radius: 12px;
 
-  background: linear-gradient(
-    180deg,
-    rgba(124,108,246,.14),
-    rgba(255,255,255,.03)
-  );
+  background: var(--card2, #182338);
 
-  border: 1px solid rgba(255,255,255,.08);
-
-  backdrop-filter: blur(20px);
+  border: 1px solid var(--border, #1f293d);
 }
 
 .storage-card h4 {
   color: #ffffff;
 
-  font-size: 15px;
+  font-size: 14px;
 
   font-weight: 600;
 
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .storage-card p {
-  margin-top: 12px;
+  margin-top: 10px;
 
-  color: #9ca7c3;
+  color: var(--text-muted, #94a3b8);
 
   font-size: 13px;
 
@@ -214,13 +199,13 @@
 .progress {
   width: 100%;
 
-  height: 8px;
+  height: 6px;
 
   border-radius: 20px;
 
   overflow: hidden;
 
-  background: rgba(255,255,255,.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .progress-fill {
@@ -230,14 +215,9 @@
 
   border-radius: inherit;
 
-  background: linear-gradient(
-    90deg,
-    #7C6CF6,
-    #A78BFA
-  );
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
 
-  box-shadow:
-    0 0 20px rgba(124,108,246,.45);
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.35);
 }
 
 /* ===========================
@@ -247,9 +227,9 @@
 .sidebar-footer {
   margin-top: auto;
 
-  padding-top: 24px;
+  padding-top: 20px;
 
-  border-top: 1px solid rgba(255,255,255,.08);
+  border-top: 1px solid var(--border, #1f293d);
 
   display: flex;
 
@@ -272,49 +252,45 @@
 
   margin-top: 8px;
 
-  padding: 14px;
+  padding: 12px;
 
   border: none;
 
-  border-radius: 14px;
+  border-radius: 10px;
 
   cursor: pointer;
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 
   color: white;
 
-  background: linear-gradient(
-    135deg,
-    #EF4444,
-    #DC2626
-  );
+  background: linear-gradient(135deg, #ef4444, #dc2626);
 
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 .logout-btn:hover {
   transform: translateY(-2px);
 
-  box-shadow:
-    0 12px 28px rgba(239,68,68,.35);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
 }
 
 .logout-btn:active {
-  transform: scale(.98);
+  transform: scale(0.98);
 }
 
 .logout-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
 }
+
 /* ===========================
    SCROLLBAR
 =========================== */
 
 .sidebar::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 .sidebar::-webkit-scrollbar-track {
@@ -322,83 +298,12 @@
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,.12);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 50px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
-  background: rgba(124,108,246,.6);
-}
-
-/* ===========================
-   ICON ANIMATION
-=========================== */
-
-.sidebar-link svg {
-  transition: transform .25s ease;
-}
-
-.sidebar-link:hover svg {
-  transform: scale(1.08);
-}
-
-/* ===========================
-   LOGO ANIMATION
-=========================== */
-
-.logo-icon {
-  transition: all .3s ease;
-}
-
-.logo:hover .logo-icon {
-  transform: rotate(-8deg) scale(1.08);
-
-  box-shadow:
-    0 18px 40px rgba(124,108,246,.45);
-}
-
-/* ===========================
-   STORAGE HOVER
-=========================== */
-
-.storage-card {
-  transition: all .3s ease;
-}
-
-.storage-card:hover {
-  transform: translateY(-3px);
-
-  border-color: rgba(124,108,246,.3);
-
-  box-shadow:
-    0 20px 45px rgba(124,108,246,.12);
-}
-
-/* ===========================
-   SIDEBAR OPEN ANIMATION
-=========================== */
-
-.sidebar {
-  animation-duration: .35s;
-  animation-fill-mode: both;
-}
-
-@keyframes slideSidebar {
-
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-}
-
-.sidebar.open {
-  animation-name: slideSidebar;
+  background: rgba(37, 99, 235, 0.6);
 }
 
 /* ===========================
@@ -407,8 +312,71 @@
 
 .sidebar-link:focus-visible,
 .logout-btn:focus-visible {
-  outline: 2px solid #7C6CF6;
+  outline: 2px solid var(--primary, #2563eb);
   outline-offset: 3px;
+}
+
+/* ===========================
+   UPGRADE BUTTON
+=========================== */
+
+.upgrade-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  border-radius: 10px;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.upgrade-btn:hover {
+  background: rgba(37, 99, 235, 0.2);
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  background: var(--card2, #182338);
+  border: 1px solid var(--border, #1f293d);
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sidebar-user h4 {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.sidebar-user span {
+  font-size: 12px;
+  color: var(--text-muted, #94a3b8);
 }
 
 /* ===========================
@@ -416,146 +384,44 @@
 =========================== */
 
 @media (max-width: 992px) {
-
   .sidebar {
     width: 260px;
   }
-
 }
 
 @media (max-width: 768px) {
-
   .sidebar {
     width: 260px;
     left: -260px;
   }
 
   .logo {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
   .sidebar-link {
-    padding: 13px 14px;
+    padding: 11px 12px;
     font-size: 14px;
   }
 
   .storage-card {
-    padding: 16px;
+    padding: 14px;
   }
-
 }
-
-
 
 /* ===========================
-   DESKTOP CONTENT OFFSET
+   CONTENT OFFSET
 =========================== */
 
-.main-content{
-    width:100%;
-    min-height:calc(100vh - 72px);
-
-    margin-top:72px;
-
-    padding:32px;
-
-    transition:.3s ease;
-}
-@media (max-width:1024px){
-
-.main-content{
-
-padding:20px;
-
-}
-
-}
-/* ===========================
-   UPGRADE BUTTON
-=========================== */
-
-.upgrade-btn {
+.main-content {
   width: 100%;
-  margin-top: 14px;
-  padding: 10px 14px;
-
-  border: none;
-  border-radius: 12px;
-
-  background: rgba(124, 108, 246, 0.15);
-  border: 1px solid rgba(124, 108, 246, 0.25);
-
-  color: #ffffff;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  cursor: not-allowed;
-
-  transition: all 0.3s ease;
+  min-height: calc(100vh - 70px);
+  padding: 32px;
+  transition: 0.3s ease;
 }
 
-.upgrade-btn:hover {
-  background: rgba(124, 108, 246, 0.22);
-}
-.sidebar-user{
-
-display:flex;
-
-align-items:center;
-
-gap:14px;
-
-padding:18px;
-
-margin-bottom:30px;
-
-border-radius:16px;
-
-background:rgba(255,255,255,.04);
-
-border:1px solid rgba(255,255,255,.08);
-
-}
-
-.user-avatar{
-
-width:48px;
-
-height:48px;
-
-border-radius:50%;
-
-background:linear-gradient(135deg,#7C6CF6,#5F46FF);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-color:white;
-
-font-size:20px;
-
-font-weight:700;
-
-}
-
-.sidebar-user h4{
-
-color:white;
-
-font-size:15px;
-
-margin-bottom:4px;
-
-}
-
-.sidebar-user span{
-
-font-size:13px;
-
-color:#9CA7C3;
-
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 20px;
+  }
 }

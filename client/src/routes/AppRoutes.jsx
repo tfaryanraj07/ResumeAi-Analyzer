@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
 import Landing from "../landing/pages/Landing";
-
 import Dashboard from "../pages/Dashboard";
 import UploadResume from "../pages/UploadResume";
 import Profile from "../pages/Profile";
@@ -26,6 +25,24 @@ const AppRoutes = () => {
 
       <Route
         path="/analysis"
+        element={
+          <ProtectedRoute>
+            <AnalysisResult />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/analysis/:id"
+        element={
+          <ProtectedRoute>
+            <AnalysisResult />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/resume/:id"
         element={
           <ProtectedRoute>
             <AnalysisResult />

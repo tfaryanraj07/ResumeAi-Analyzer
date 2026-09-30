@@ -15,10 +15,10 @@
 
   background:
     radial-gradient(circle at top right,
-      rgba(108,99,255,.15),
+      rgba(37, 99, 235, 0.12),
       transparent 40%),
     radial-gradient(circle at bottom left,
-      rgba(79,70,229,.10),
+      rgba(14, 165, 233, 0.08),
       transparent 35%),
     #09090B;
 }
@@ -38,7 +38,7 @@
   top:-120px;
   right:-120px;
 
-  background:#6C63FF;
+  background:#2563eb;
 
   opacity:.18;
 
@@ -117,11 +117,11 @@ width:max-content;
 
 border-radius:999px;
 
-background:rgba(108,99,255,.12);
+background:rgba(37, 99, 235, 0.1);
 
-border:1px solid rgba(108,99,255,.25);
+border:1px solid rgba(37, 99, 235, 0.25);
 
-color:#C4B5FD;
+color:#93c5fd;
 
 font-size:14px;
 
@@ -147,8 +147,8 @@ margin-bottom:22px;
 
 background:linear-gradient(
 90deg,
-#6C63FF,
-#A78BFA
+#2563eb,
+#38bdf8
 );
 
 -webkit-background-clip:text;
@@ -306,7 +306,7 @@ font-size:15px;
 
   margin-bottom: 30px;
 
-  background: #6C63FF;
+  background: #2563eb;
 }
 
 /* Resume Lines */
@@ -427,7 +427,7 @@ font-size:15px;
 
   border-radius: 50%;
 
-  background: #6C63FF;
+  background: #2563eb;
 
   opacity: .18;
 

@@ -1,23 +1,23 @@
 :root {
-  --bg: #0b1220;
-  --surface: #141c2f;
-  --surface-hover: #1b2640;
+  --bg: #0b0f17;
+  --surface: #121a29;
+  --surface-hover: #182338;
 
-  --border: #27344d;
+  --border: #1f293d;
 
-  --primary: #7c5cff;
-  --primary-light: #9277ff;
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
 
   --text: #f8fafc;
   --muted: #94a3b8;
 
-  --success: #22c55e;
+  --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
 
-  --radius: 20px;
+  --radius: 14px;
 
-  --shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 
   --transition: all 0.25s ease;
 }
@@ -68,8 +68,9 @@
 
 .analysis-header-left h1 {
   color: var(--text);
-  font-size: 30px;
+  font-size: 28px;
   margin: 0;
+  font-weight: 700;
 }
 
 .resume-info {
@@ -83,7 +84,7 @@
   align-items: center;
   gap: 8px;
 
-  color: white;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -121,15 +122,15 @@
 }
 
 .stats-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: var(--primary);
 }
 
 .stats-icon {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
 
-  border-radius: 14px;
+  border-radius: 12px;
 
   display: flex;
   justify-content: center;
@@ -141,12 +142,14 @@
 .stats-card h2 {
   margin: 4px 0 0;
   color: white;
-  font-size: 28px;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .stats-card p {
   margin: 0;
   color: var(--muted);
+  font-size: 14px;
 }
 
 /* ================= GRID ================= */
@@ -180,31 +183,27 @@
 }
 
 .analysis-card:hover {
-  transform: translateY(-6px);
-
+  transform: translateY(-4px);
   background: var(--surface-hover);
-
-  border-color: var(--primary);
+  border-color: rgba(37, 99, 235, 0.4);
 }
 
 .analysis-card h3 {
   margin: 0;
-
   color: white;
-
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: 600;
 }
 
 .analysis-card p {
   color: var(--muted);
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .analysis-section-title {
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-
   margin-bottom: 8px;
 }
 
@@ -213,14 +212,10 @@
 .analysis-list {
   display: flex;
   flex-direction: column;
-
-  gap: 16px;
-
+  gap: 14px;
   padding-left: 18px;
-
-  color: var(--muted);
-
-  line-height: 1.7;
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
 /* ================= ATS ================= */
@@ -229,9 +224,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
-
   padding: 24px;
 }
 
@@ -241,7 +234,7 @@
 
 .progress-bg {
   fill: none;
-  stroke: #263042;
+  stroke: #1e293b;
   stroke-width: 14;
 }
 
@@ -255,7 +248,6 @@
 
 .progress-content {
   position: absolute;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -263,34 +255,26 @@
 
 .progress-content h1 {
   margin: 0;
-
   color: white;
-
   font-size: 42px;
+  font-weight: 700;
 }
 
 .progress-content p {
-  margin-top: 8px;
-
+  margin-top: 6px;
   color: var(--muted);
-
-  font-size: 15px;
-
-  letter-spacing: 2px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
 }
 
 .score-badge {
   margin-top: 18px;
-
-  background: rgba(34, 197, 94, 0.15);
-
+  background: rgba(16, 185, 129, 0.15);
   color: var(--success);
-
-  padding: 8px 18px;
-
+  padding: 6px 16px;
   border-radius: 30px;
-
   font-weight: 600;
+  font-size: 14px;
 }
 
 /* ================= SKILLS ================= */
@@ -298,60 +282,52 @@
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-
-  gap: 12px;
-
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 .skill-chip {
-  padding: 10px 16px;
-
-  border-radius: 999px;
-
-  background: #24314f;
-
-  color: white;
-
-  font-size: 14px;
-  font-weight: 600;
-
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #182338;
+  border: 1px solid var(--border);
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 500;
   transition: var(--transition);
 }
 
 .skill-chip:hover {
   background: var(--primary);
-  transform: scale(1.05);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
 .skill-chip.missing {
-  background: #3f1d1d;
-  color: #ffb4b4;
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
 }
 
 /* ================= BUTTON ================= */
 
 .analysis-button {
-  padding: 12px 24px;
-
+  padding: 11px 22px;
   border: none;
-  border-radius: 12px;
-
+  border-radius: 8px;
   background: var(--primary);
-
   color: white;
-
   font-weight: 600;
-
   cursor: pointer;
-
   transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .analysis-button:hover {
   background: var(--primary-light);
-
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
 }
 
 /* ================= RESPONSIVE ================= */
@@ -381,10 +357,10 @@
   }
 
   .analysis-header-left h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .progress-content h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 }

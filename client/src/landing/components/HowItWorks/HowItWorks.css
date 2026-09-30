@@ -42,7 +42,7 @@
 
     transform:translateY(-12px);
 
-    border-color:#6C63FF;
+    border-color:#2563eb;
 
     box-shadow:0 20px 40px rgba(0,0,0,.3);
 }
@@ -74,7 +74,7 @@
 
     background:linear-gradient(
         135deg,
-        #6C63FF,
+        #2563eb,
         #4F46E5
     );
 
@@ -115,7 +115,7 @@
 
     transform:translateY(-50%);
 
-    color:#6C63FF;
+    color:#2563eb;
 }
 
 @media(max-width:992px){

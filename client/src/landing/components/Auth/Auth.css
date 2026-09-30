@@ -86,7 +86,7 @@ transition:.3s;
 
 .close-btn:hover{
 
-background:#6C63FF;
+background:#2563eb;
 
 transform:rotate(90deg);
 }
@@ -174,9 +174,9 @@ color:#64748B;
 
 .form-group input:focus{
 
-border-color:#6C63FF;
+border-color:#2563eb;
 
-box-shadow:0 0 0 4px rgba(108,99,255,.15);
+box-shadow:0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 /* ===========================
@@ -270,7 +270,7 @@ justify-content:center;
 
 gap:10px;
 
-background:linear-gradient(135deg,#6C63FF,#4F46E5);
+background:linear-gradient(135deg,#2563eb,#4F46E5);
 
 transition:.35s;
 }
@@ -318,7 +318,7 @@ cursor:pointer;
 
 font-weight:700;
 
-color:#6C63FF;
+color:#2563eb;
 
 transition:.3s;
 }

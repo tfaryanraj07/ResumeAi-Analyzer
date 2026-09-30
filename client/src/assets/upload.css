@@ -38,8 +38,8 @@
 =========================== */
 
 .dropzone{
-    background:#18181f;
-    border:2px dashed #44445d;
+    background:#121a29;
+    border:2px dashed #1f293d;
     border-radius:24px;
     padding:70px 30px;
     text-align:center;
@@ -48,17 +48,17 @@
 }
 
 .dropzone:hover{
-    border-color:#7C5CFF;
+    border-color:#2563eb;
     background:#1e1e29;
 }
 
 .dragging{
-    border-color:#7C5CFF;
+    border-color:#2563eb;
     transform:scale(1.01);
 }
 
 .drop-icon{
-    color:#7C5CFF;
+    color:#2563eb;
     margin-bottom:18px;
 }
 
@@ -98,7 +98,7 @@
     align-items:center;
     gap:30px;
 
-    background:#18181f;
+    background:#121a29;
 
     border:1px solid rgba(255,255,255,.08);
 
@@ -113,7 +113,7 @@
 
 .selected-file-card:hover{
     transform:translateY(-4px);
-    border-color:#7C5CFF66;
+    border-color:#2563eb66;
 }
 
 .selected-file-left{
@@ -132,9 +132,9 @@
 
     border-radius:18px;
 
-    background:#7C5CFF22;
+    background:#2563eb22;
 
-    color:#7C5CFF;
+    color:#2563eb;
 
     flex-shrink:0;
 }
@@ -192,7 +192,7 @@
 
     border-radius:12px;
 
-    background:#272733;
+    background:#182338;
 
     color:#ddd;
 
@@ -203,7 +203,7 @@
 
 .remove-btn:hover:not(:disabled){
 
-    background:#333344;
+    background:#1f293d;
 
     color:white;
 }
@@ -229,8 +229,8 @@
 
     background:linear-gradient(
         135deg,
-        #7C5CFF,
-        #6A4BFF
+        #2563eb,
+        #1d4ed8
     );
 
     color:white;
@@ -365,7 +365,7 @@ transform:translateY(0) scale(1);
 =========================== */
 
 .history-card{
-    background:#18181f;
+    background:#121a29;
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
     padding:24px;
@@ -378,8 +378,8 @@ transform:translateY(0) scale(1);
 }
 
 .history-card:hover{
-    border-color:#7C5CFF66;
-    box-shadow:0 20px 45px rgba(124,92,255,.18);
+    border-color:#2563eb66;
+    box-shadow:0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
 .history-top{
@@ -399,9 +399,9 @@ transform:translateY(0) scale(1);
     justify-content:center;
     align-items:center;
 
-    background:#7C5CFF22;
+    background:#2563eb22;
 
-    color:#7C5CFF;
+    color:#2563eb;
 
     flex-shrink:0;
 }
@@ -453,7 +453,7 @@ transform:translateY(0) scale(1);
 
     text-decoration:none;
 
-    background:#7C5CFF;
+    background:#2563eb;
 
     color:white;
 
@@ -468,7 +468,7 @@ transform:translateY(0) scale(1);
 
 .view-btn:hover{
 
-    background:#6a4bff;
+    background:#1d4ed8;
 
     transform:translateY(-2px);
 }
@@ -515,7 +515,7 @@ transform:translateY(0) scale(1);
 
 .empty-history{
 
-    background:#18181f;
+    background:#121a29;
 
     border:2px dashed rgba(255,255,255,.08);
 
@@ -580,7 +580,7 @@ transform:translateY(0) scale(1);
 
     max-width:480px;
 
-    background:#18181f;
+    background:#121a29;
 
     border-radius:24px;
 
@@ -672,14 +672,14 @@ transform:translateY(0) scale(1);
 
 .cancel-btn{
 
-    background:#2b2b38;
+    background:#182338;
 
     color:#ddd;
 }
 
 .cancel-btn:hover{
 
-    background:#373747;
+    background:#1f293d;
 
     color:white;
 }
@@ -728,7 +728,7 @@ transform:translateY(0) scale(1);
     width:100%;
     max-width:520px;
 
-    background:#18181f;
+    background:#121a29;
 
     border:1px solid rgba(255,255,255,.08);
 
@@ -767,7 +767,7 @@ transform:translateY(0) scale(1);
 
     height:8px;
 
-    background:#2c2c3c;
+    background:#182338;
 
     border-radius:999px;
 
@@ -784,8 +784,8 @@ transform:translateY(0) scale(1);
 
     background:linear-gradient(
         90deg,
-        #7C5CFF,
-        #9B8CFF
+        #2563eb,
+        #38bdf8F
     );
 
     transition:width .4s ease;
@@ -841,7 +841,7 @@ transform:translateY(0) scale(1);
 .step-item.active{
  color:white;
 
-    border-left:4px solid #7C5CFF;
+    border-left:4px solid #2563eb;
  transform:translateX(6px);
     background:#32294f;
 }
@@ -865,7 +865,7 @@ transform:translateY(0) scale(1);
 
 ::-webkit-scrollbar-track{
 
-    background:#18181f;
+    background:#121a29;
 }
 
 /* ===========================
@@ -1053,16 +1053,16 @@ flex-shrink:0;
 
 .completed{
 
-background:#7C5CFF;
+background:#2563eb;
 
-border-color:#7C5CFF;
+border-color:#2563eb;
 }
 
 .current{
 
-border-color:#7C5CFF;
+border-color:#2563eb;
 
-box-shadow:0 0 10px rgba(124,92,255,.5);
+box-shadow:0 0 10px rgba(37, 99, 235, 0.5);
 }
 
 .step-text{
@@ -1089,9 +1089,9 @@ font-size:.8rem;
 
 .working{
 
-background:#7C5CFF22;
+background:#2563eb22;
 
-color:#a78bfa;
+color:#38bdf8a;
 
 padding:4px 10px;
 

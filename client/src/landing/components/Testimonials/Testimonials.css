@@ -36,7 +36,7 @@ transition:.35s;
 
 transform:translateY(-10px);
 
-border-color:#6C63FF;
+border-color:#2563eb;
 
 box-shadow:0 20px 45px rgba(0,0,0,.3);
 
@@ -44,7 +44,7 @@ box-shadow:0 20px 45px rgba(0,0,0,.3);
 
 .quote-icon{
 
-color:#6C63FF;
+color:#2563eb;
 
 margin-bottom:20px;
 
@@ -92,7 +92,7 @@ border-radius:50%;
 
 background:linear-gradient(
 135deg,
-#6C63FF,
+#2563eb,
 #4F46E5
 );
 

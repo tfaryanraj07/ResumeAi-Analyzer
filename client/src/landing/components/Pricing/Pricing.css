@@ -20,13 +20,13 @@
 
 .price-card:hover {
   transform: translateY(-10px);
-  border-color: #6C63FF;
+  border-color: #2563eb;
   box-shadow: 0 25px 45px rgba(0,0,0,.35);
 }
 
 .popular {
   transform: scale(1.05);
-  border: 2px solid #6C63FF;
+  border: 2px solid #2563eb;
 }
 
 .popular:hover {
@@ -38,7 +38,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: #6C63FF;
+  background: #2563eb;
   color: white;
   padding: 8px 18px;
   border-radius: 999px;
@@ -89,7 +89,7 @@
   height: 52px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(135deg,#6C63FF,#4F46E5);
+  background: linear-gradient(135deg,#2563eb,#4F46E5);
   color: white;
   font-weight: 700;
   cursor: pointer;

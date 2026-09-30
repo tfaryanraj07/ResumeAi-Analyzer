@@ -52,7 +52,7 @@ justify-content:center;
 
 background:linear-gradient(
 135deg,
-#6C63FF,
+#2563eb,
 #4F46E5
 );
 
@@ -170,7 +170,7 @@ transition:.3s;
 
 .social-icons a:hover{
 
-background:#6C63FF;
+background:#2563eb;
 
 transform:translateY(-4px);
 
@@ -196,7 +196,7 @@ cursor:pointer;
 
 background:linear-gradient(
 135deg,
-#6C63FF,
+#2563eb,
 #4F46E5
 );
 
